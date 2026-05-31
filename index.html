@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CheeTek Inc. | Manufacturing Technology Consulting</title>
+  <meta name="description" content="CheeTek Inc. is a Texas-based technology consulting company supporting modern manufacturing hardware, robotics, industrial equipment, and connected operations across the USA." />
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #07111f;
+      color: #ffffff;
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1120px, 92%);
+      margin: auto;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(7, 17, 31, 0.88);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 0;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+    }
+
+    .logo span {
+      color: #33d6ff;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 26px;
+      font-size: 15px;
+      color: #cbd5e1;
+    }
+
+    .nav-links a:hover {
+      color: #33d6ff;
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      padding: 100px 0 90px;
+      background:
+        radial-gradient(circle at 20% 20%, rgba(51,214,255,0.24), transparent 34%),
+        radial-gradient(circle at 80% 10%, rgba(99,102,241,0.22), transparent 30%),
+        linear-gradient(135deg, #07111f 0%, #0b1730 55%, #111827 100%);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 44px;
+      align-items: center;
+    }
+
+    .badge {
+      display: inline-block;
+      margin-bottom: 22px;
+      padding: 9px 14px;
+      border: 1px solid rgba(51,214,255,0.35);
+      border-radius: 999px;
+      color: #b7f4ff;
+      background: rgba(51,214,255,0.09);
+      font-size: 14px;
+    }
+
+    h1 {
+      font-size: clamp(42px, 6vw, 72px);
+      line-height: 1.02;
+      letter-spacing: -2px;
+      margin-bottom: 24px;
+    }
+
+    .hero p {
+      color: #cbd5e1;
+      font-size: 19px;
+      max-width: 650px;
+      margin-bottom: 34px;
+    }
+
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 22px;
+      border-radius: 999px;
+      font-weight: 700;
+      transition: 0.2s ease;
+    }
+
+    .btn-primary {
+      background: #33d6ff;
+      color: #04111f;
+    }
+
+    .btn-primary:hover {
+      background: #9beeff;
+    }
+
+    .btn-secondary {
+      border: 1px solid rgba(255,255,255,0.18);
+      color: #ffffff;
+      background: rgba(255,255,255,0.05);
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255,255,255,0.1);
+    }
+
+    .hero-card {
+      position: relative;
+      border-radius: 30px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.12);
+      box-shadow: 0 24px 80px rgba(0,0,0,0.35);
+      background: rgba(255,255,255,0.05);
+      padding: 10px;
+    }
+
+    .hero-card img {
+      width: 100%;
+      height: 500px;
+      object-fit: cover;
+      border-radius: 22px;
+      filter: saturate(1.05) contrast(1.05);
+    }
+
+    .image-note {
+      position: absolute;
+      left: 24px;
+      right: 24px;
+      bottom: 24px;
+      padding: 18px;
+      border-radius: 22px;
+      background: rgba(7,17,31,0.76);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255,255,255,0.12);
+    }
+
+    .image-note small {
+      color: #33d6ff;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    .image-note strong {
+      display: block;
+      margin-top: 5px;
+      font-size: 20px;
+    }
+
+    section {
+      padding: 86px 0;
+    }
+
+    .section-label {
+      color: #33d6ff;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-size: 13px;
+      font-weight: 800;
+      margin-bottom: 14px;
+    }
+
+    h2 {
+      font-size: clamp(32px, 4vw, 48px);
+      line-height: 1.12;
+      letter-spacing: -1px;
+      margin-bottom: 18px;
+    }
+
+    .section-intro {
+      color: #cbd5e1;
+      font-size: 18px;
+      max-width: 780px;
+      margin-bottom: 38px;
+    }
+
+    .services {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .service-card {
+      padding: 26px;
+      border-radius: 26px;
+      background: rgba(255,255,255,0.045);
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .service-card .icon {
+      font-size: 30px;
+      margin-bottom: 16px;
+    }
+
+    .service-card h3 {
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+
+    .service-card p {
+      color: #aebbd0;
+      font-size: 15px;
+    }
+
+    .about {
+      background: rgba(255,255,255,0.035);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 44px;
+      align-items: center;
+    }
+
+    .about img {
+      width: 100%;
+      height: 420px;
+      object-fit: cover;
+      border-radius: 30px;
+      border: 1px solid rgba(255,255,255,0.12);
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+      margin-top: 26px;
+    }
+
+    .stat {
+      padding: 22px;
+      border-radius: 24px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .stat strong {
+      display: block;
+      color: #33d6ff;
+      font-size: 34px;
+      margin-bottom: 4px;
+    }
+
+    .stat span {
+      color: #cbd5e1;
+      font-size: 15px;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 0.85fr 1.15fr;
+      gap: 40px;
+      align-items: start;
+    }
+
+    .contact-info p {
+      color: #cbd5e1;
+      margin-bottom: 12px;
+    }
+
+    form {
+      padding: 28px;
+      border-radius: 30px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.12);
+    }
+
+    label {
+      display: block;
+      color: #cbd5e1;
+      margin-bottom: 8px;
+      font-size: 14px;
+    }
+
+    input, textarea {
+      width: 100%;
+      margin-bottom: 18px;
+      padding: 14px 15px;
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: #0b1730;
+      color: #ffffff;
+      font-size: 15px;
+      outline: none;
+    }
+
+    input:focus, textarea:focus {
+      border-color: #33d6ff;
+      box-shadow: 0 0 0 4px rgba(51,214,255,0.12);
+    }
+
+    textarea {
+      min-height: 150px;
+      resize: vertical;
+    }
+
+    .form-note {
+      color: #94a3b8;
+      font-size: 13px;
+      margin-top: 12px;
+    }
+
+    footer {
+      border-top: 1px solid rgba(255,255,255,0.1);
+      padding: 28px 0;
+      color: #94a3b8;
+      font-size: 14px;
+    }
+
+    .footer-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 900px) {
+      .hero-grid,
+      .about-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .services {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .hero-card img {
+        height: 390px;
+      }
+    }
+
+    @media (max-width: 620px) {
+      .nav-links {
+        display: none;
+      }
+
+      .services,
+      .stats {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding-top: 70px;
+      }
+
+      .hero-card img,
+      .about img {
+        height: 320px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <a class="logo" href="#">Chee<span>Tek</span> Inc.</a>
+        <div class="nav-links">
+          <a href="#services">Services</a>
+          <a href="#about">About</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="badge">Texas-based industrial technology consulting</div>
+          <h1>Modern tech support for smarter manufacturing operations.</h1>
+          <p>
+            CheeTek Inc. helps manufacturers, equipment users, and operations teams evaluate,
+            support, and improve modern manufacturing hardware, robotics, connected equipment,
+            and industrial technology environments across the USA.
+          </p>
+          <div class="buttons">
+            <a class="btn btn-primary" href="#contact">Contact Us</a>
+            <a class="btn btn-secondary" href="#services">View Services</a>
+          </div>
+        </div>
+
+        <div class="hero-card">
+          <img src="https://images.unsplash.com/photo-1581092921461-7d65ca45393a?auto=format&fit=crop&w=1400&q=80" alt="AGV robot working in a modern factory or warehouse" />
+          <div class="image-note">
+            <small>Industrial Automation</small>
+            <strong>Robotics, equipment, and connected hardware support.</strong>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="services">
+      <div class="container">
+        <div class="section-label">Service Range</div>
+        <h2>Broad technology support for manufacturing hardware and industrial teams.</h2>
+        <p class="section-intro">
+          Our work is intentionally flexible. We help clients navigate equipment decisions,
+          technical challenges, implementation planning, and ongoing support needs across
+          advanced manufacturing environments.
+        </p>
+
+        <div class="services">
+          <div class="service-card">
+            <div class="icon">🏭</div>
+            <h3>Manufacturing Technology Consulting</h3>
+            <p>Guidance for modern production environments, industrial equipment ecosystems, and practical technology adoption.</p>
+          </div>
+
+          <div class="service-card">
+            <div class="icon">🤖</div>
+            <h3>Automation & Robotics Support</h3>
+            <p>Flexible support for automation hardware, robotic systems, connected equipment, and facility improvement projects.</p>
+          </div>
+
+          <div class="service-card">
+            <div class="icon">🛠️</div>
+            <h3>Equipment Support Planning</h3>
+            <p>Consulting for manufacturing hardware performance, reliability, service coordination, and operational continuity.</p>
+          </div>
+
+          <div class="service-card">
+            <div class="icon">⚡</div>
+            <h3>AI-Ready Industrial Solutions</h3>
+            <p>Modern insight for smarter equipment, digital workflows, software-connected operations, and scalable technology roadmaps.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="about">
+      <div class="container about-grid">
+        <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1400&q=80" alt="Automated guided vehicle in warehouse or factory environment" />
+
+        <div>
+          <div class="section-label">About CheeTek</div>
+          <h2>Built in Texas for the next generation of U.S. manufacturing.</h2>
+          <p class="section-intro">
+            CheeTek Inc. provides practical, modern consulting for companies working with
+            manufacturing equipment, robotic products, industrial hardware, and connected
+            technology. We bring a software-aware, AI-forward mindset to real-world production challenges.
+          </p>
+
+          <div class="stats">
+            <div class="stat">
+              <strong>USA</strong>
+              <span>Support focus for U.S. manufacturers and equipment users.</span>
+            </div>
+            <div class="stat">
+              <strong>TX</strong>
+              <span>Texas-based company with a modern industrial technology perspective.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container contact-grid">
+        <div class="contact-info">
+          <div class="section-label">Contact Us</div>
+          <h2>Tell us what you’re building, operating, or improving.</h2>
+          <p>
+            Send a short message and we’ll follow up to learn more about your manufacturing
+            technology, equipment, or support needs.
+          </p>
+          <p><strong>Location:</strong> Texas, United States</p>
+          <p><strong>Email:</strong> info@cheetek.com</p>
+        </div>
+
+        <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+          <label for="name">Name</label>
+          <input id="name" name="name" type="text" placeholder="Your name" required />
+
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" placeholder="you@example.com" required />
+
+          <label for="company">Company</label>
+          <input id="company" name="company" type="text" placeholder="Company name" />
+
+          <label for="message">Message</label>
+          <textarea id="message" name="message" placeholder="Tell us about your equipment, facility, project, or support needs." required></textarea>
+
+          <button class="btn btn-primary" type="submit">Send Message</button>
+          <p class="form-note">
+            Before launch, replace YOUR_FORM_ID with your real Formspree form ID, or connect this form to another email service.
+          </p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-row">
+      <p>© 2026 CheeTek Inc. All rights reserved.</p>
+      <p>Manufacturing technology consulting · Texas · USA</p>
+    </div>
+  </footer>
+</body>
+</html>
